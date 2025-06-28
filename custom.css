@@ -1,0 +1,21 @@
+body {
+    font-family: 'Microsoft YaHei', 'SimSun', 'SimHei', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+/* Custom styles for subtle shadows and rounded corners */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 0.75rem; /* rounded-xl */
+}
+/* Make header background semi-transparent over hero */
+.header-transparent {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker semi-transparent */
+    backdrop-filter: blur(5px); /* Optional: blur effect */
+}
+/* Ensure hero section covers full height */
+.hero-section {
+    min-height: calc(100vh - 80px); /* Adjust based on header height, roughly */
+    background-size: cover;
+    background-position: center;
+}
