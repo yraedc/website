@@ -16,18 +16,21 @@
 <body class="antialiased">
     <div class="min-h-screen flex flex-col">
         <!-- Header -->
-        <header class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 text-white header-transparent transition-all duration-300 ease-in-out">
+        <header class="fixed top-0 left-0 w-full z-50 py-4 px-4 md:px-12 text-white header-transparent transition-all duration-300 ease-in-out">
             <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <!-- Logo -->
-                <div class="mb-4 md:mb-0">
-                    <img src="./Yellow-River-Art-Ensemble_files/logo_edited.png" alt="黄河艺术团 Logo" class="h-16 w-auto rounded-lg">
+                <div class="mb-2 md:mb-0 flex items-center w-full md:w-auto justify-between">
+                    <img src="./Yellow-River-Art-Ensemble_files/logo_edited.png" alt="黄河艺术团 Logo" class="h-12 w-auto rounded-lg">
+                    <button id="mobile-menu-btn" class="md:hidden text-yellow-300 text-3xl focus:outline-none ml-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
                 <!-- Navigation -->
-                <nav>
-                    <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-lg md:text-xl font-medium">
+                <nav id="main-nav" class="w-full md:w-auto md:block hidden">
+                    <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8 text-lg md:text-xl font-medium bg-white md:bg-transparent text-yellow-900 md:text-white rounded-lg md:rounded-none shadow md:shadow-none p-4 md:p-0 mt-2 md:mt-0">
                         <li><a href="#home" class="hover:text-yellow-300 transition duration-300 ease-in-out py-2 px-3 rounded-md">首页</a></li>
-                        <li><a href="#news-events" class="hover:text-yellow-300 transition duration-300 ease-in-out py-2 px-3 rounded-md">新闻与活动</a></li>
-                        <li><a href="#gallery" class="hover:text-yellow-300 transition duration-300 ease-in-out py-2 px-3 rounded-md">画廊</a></li>
+                        <li><a href="#essay-30th" class="hover:text-yellow-300 transition duration-300 ease-in-out py-2 px-3 rounded-md">新闻与活动</a></li>
+                        <!-- <li><a href="#gallery" class="hover:text-yellow-300 transition duration-300 ease-in-out py-2 px-3 rounded-md">画廊</a></li> -->
                         <li><a href="#contact" class="hover:text-yellow-300 transition duration-300 ease-in-out py-2 px-3 rounded-md">联系我们</a></li>
                     </ul>
                 </nav>
@@ -35,25 +38,24 @@
         </header>
 
         <!-- Home/Hero Section -->
-        <section id="home" class="hero-section relative flex items-center justify-center text-center text-white overflow-hidden" style="height: 60vh; min-height: 360px; background-image: url('./media/d13c86442875cb5c8c7359fe9b5453c1.JPG'); background-size: cover; background-position: center;">
+        <section id="home" class="hero-section relative flex items-center justify-center text-center text-white overflow-hidden" style="height: 50vh; min-height: 220px; background-image: url('./media/d13c86442875cb5c8c7359fe9b5453c1.JPG'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-            <div class="relative z-10 p-6 md:p-12 max-w-4xl mx-auto flex flex-col justify-center items-center h-full">
-                <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg mb-4 leading-tight text-center"></h1>
-                    <span style="font-size: 6em;">
-                        黄河艺术团
-                        <span class="block" style="font-size: 0.25em; opacity: 0.9; margin-top: 0.5em;">
-                            (Yellow River Art Ensemble)
-                        </span>
+            <div class="relative z-10 p-4 md:p-12 max-w-2xl md:max-w-4xl mx-auto flex flex-col justify-center items-center h-full">
+                <h1 class="text-3xl md:text-6xl font-extrabold drop-shadow-lg mb-2 md:mb-4 leading-tight text-center"></h1>
+                <span style="font-size: 2.2em;">
+                    黄河艺术团
+                    <span class="block" style="font-size: 0.5em; opacity: 0.9; margin-top: 0.5em;">
+                        (Yellow River Art Ensemble)
                     </span>
-                </h1>
+                </span>
             </div>
         </section>
 
         <!-- Main Content Wrapper (adjust padding-top to account for fixed header) -->
-        <main class="flex-grow container mx-auto px-6 py-8 md:py-12 mt-20"> <!-- Added mt-20 for header clearance -->
+        <main class="flex-grow container mx-auto px-2 sm:px-4 py-6 md:py-12 mt-8"> <!-- Reduced mt-20 to mt-8 for less gap -->
 
             <!-- About Us Section -->
-            <section id="about" class="mb-16 md:mb-24 bg-white p-8 md:p-12 card flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <section id="about" class="mb-8 md:mb-12 bg-white p-8 md:p-12 card flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div class="md:w-1/2 flex justify-center">
                     <div id="about-carousel" class="relative w-full max-w-lg">
                         <!-- Carousel Images -->
@@ -170,110 +172,52 @@
                 </div>
             </section>
 
-            <!-- Classes Section (New) -->
-            <section id="classes" class="mb-16 md:mb-24 p-8 md:p-12 card bg-red-50">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-red-700 mb-8 md:mb-10">我们的课程</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <!-- Class Card 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
-                        <img src="https://placehold.co/400x250/F0B90B/FFFFFF?text=声乐课程" alt="声乐课程" class="rounded-md mb-4 w-full h-40 object-cover">
-                        <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">声乐训练</h3>
-                        <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                            专业的声乐指导，从基础发声到歌曲演绎，助您提升歌唱技巧，展现美妙歌喉。
+            <!-- 30周年征文 Section -->
+            <section id="essay-30th" class="mb-8 md:mb-12 p-8 md:p-12 card bg-yellow-50 rounded-xl shadow-lg">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-700 mb-8 md:mb-10">建团30周年征文</h2>
+                <div class="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+                    <!-- Left column: image and paragraph + first 6 essays -->
+                    <div class="md:w-1/2 flex flex-col items-center">
+                        <img src="./Yellow-River-Art-Ensemble_files/30周年庆-征文.jpg" alt="30周年庆-征文" class="rounded-lg shadow-md w-full max-w-lg object-cover mb-4">
+                        <p class="mb-4 text-gray-800 text-base md:text-lg leading-relaxed text-center md:text-left">
+                            时间过得真快，弹指之间，黄河艺术团已经走过了整整30年。作为身在华府的一支艺术团体，“黄河”带给大家的不仅仅是舞台上莺歌燕舞的精彩表演，还有它对中国文化的传承和发扬，以及对于华府社区的重要贡献。从今天开始，请大家跟随“黄河人”一清晰而鲜活的脚印，去分享“黄河”以及“黄河人”那些生动感人的故事。
                         </p>
-                        <button class="mt-4 bg-yellow-600 text-white px-5 py-2 rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out">立即报名</button>
+                        <ul class="list-disc pl-5 space-y-1 w-full text-left">
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_57375bcb7ce14e10a4469b154b6b16b7.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河艺术团成立始末（郭能华）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_db194086f0fe4e3e9714a55270769a63.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河艺术团，我学习声乐艺术的摇篮（韩维）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_6c0ae97550c142988b208380f6ce9ab9.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河的电声小乐队和器乐爱好者（庹旌生）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_195d6ba74eb749f981ae86a7e149d48e.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河用歌声诠释崇敬</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_4dbbf9ce376e46b9b324157334f94ef1.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河版阿拉木罕（陈莎莎）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_d4155cc163d54ea6abb9f5e5ae07da53.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河情怀（吴嘉）</a></li>
+                        </ul>
                     </div>
-                    <!-- Class Card 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
-                        <img src="https://placehold.co/400x250/E1AF1B/FFFFFF?text=民族舞课程" alt="民族舞课程" class="rounded-md mb-4 w-full h-40 object-cover">
-                        <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">民族舞蹈</h3>
-                        <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                            学习中国各民族的经典舞蹈，体验优美舞姿与深厚文化底蕴的结合。
-                        </p>
-                        <button class="mt-4 bg-yellow-600 text-white px-5 py-2 rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out">立即报名</button>
+                    <!-- Right column: remaining essays -->
+                    <div class="md:w-1/2 text-gray-800 text-base md:text-lg leading-relaxed">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_75c346076b4c4850a37491af1b2a4774.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河人笑了，醉了，疯了（孙殿涛）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_fa75c57fa17644f0806739b1488c9f16.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河人林肯纪念堂（孙殿涛）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_c002d2b578904b8fb550fa4eb60d076a.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">黄河（绍福）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_80d8c71d8daa4164949495dd7a5c989b.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">裸腿小夫人（雷思源）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_9448ad250d2a478b8eef7b8e42c6c593.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">祝黄河艺术团生日快乐（彭瑜）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_141b19f791df45c092f2fdd3c0e360f4.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">用真诚演绎金曲（歌剧音乐会）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_71d6c1f5666c4026b1a6d2c6efd1cf4d.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">汇入黄河（陈昌）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_d808377225264701a1108e88cbba1006.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">新团员 新体验（贾静）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_14a326f86e6e4245b7fb2a7d61c6e6d4.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">我的音乐梦想（马国富）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_9173a317bec04a37a3c4e282a359ca42.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">我的回顾（张祥雨）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_034fa1f2c028430387ad18a70599dc85.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">我与黄河的缘分（赵丰）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_c8609adb5aab4fd398067c6d7501ea83.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">忆2009黄河艺术团金秋月圆晚会（张筑麟）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_62fcdca06b0342449d4009111f3249f1.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">团长戒酒记（张人姝）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_c3c826b186ce4606ab96e66bb711938f.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">“摆”谱儿（陈昌）</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_b871eec7eaf6419b8f4c4e6c08d3d7fb.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">“黄河人”用歌声向电影致敬</a></li>
+                            <li><a href="https://61ff7509-7fff-4eeb-82aa-ecb44f20aa74.filesusr.com/ugd/0438af_7d7f451bdf0e4bf78ed3a2ef31aff8a8.pdf" target="_blank" class="text-yellow-800 hover:underline font-semibold">唱不完的歌曲，道不尽的黄河（孙殿涛）</a></li>
+                        </ul>
                     </div>
-                    <!-- Class Card 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
-                        <img src="https://placehold.co/400x250/D4AF37/FFFFFF?text=器乐课程" alt="器乐课程" class="rounded-md mb-4 w-full h-40 object-cover">
-                        <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">民族器乐</h3>
-                        <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                            古筝、二胡、琵琶等传统乐器教学，领略中华音乐的独特韵味。
-                        </p>
-                        <button class="mt-4 bg-yellow-600 text-white px-5 py-2 rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out">立即报名</button>
                     </div>
                 </div>
             </section>
-
-            <!-- News & Events Section -->
-            <section id="news-events" class="mb-16 md:mb-24 p-8 md:p-12 card bg-yellow-50">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-red-700 mb-8 md:mb-10">新闻与活动</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                    <!-- News/Event Item 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out flex flex-col sm:flex-row gap-4">
-                        <div class="sm:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/200x150/F0B90B/FFFFFF?text=新闻+1" alt="新闻图片 1" class="rounded-md w-full h-auto sm:h-36 object-cover">
-                        </div>
-                        <div class="sm:w-2/3">
-                            <p class="text-gray-500 text-sm mb-2">2025年6月20日</p>
-                            <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">艺术团荣获年度社区贡献奖</h3>
-                            <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                                黄河艺术团因其在社区文化推广方面的杰出贡献，近日荣获本年度“社区贡献奖”。这一荣誉是对艺术团全体成员不懈努力的肯定。
-                            </p>
-                            <button class="mt-4 text-red-600 hover:text-red-800 font-semibold transition duration-300 ease-in-out">阅读更多 &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- News/Event Item 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out flex flex-col sm:flex-row gap-4">
-                        <div class="sm:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/200x150/E1AF1B/FFFFFF?text=活动+2" alt="新闻图片 2" class="rounded-md w-full h-auto sm:h-36 object-cover">
-                        </div>
-                        <div class="sm:w-2/3">
-                            <p class="text-gray-500 text-sm mb-2">2025年5月10日</p>
-                            <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">夏季招生季正式开启</h3>
-                            <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                                期待您的加入！黄河艺术团夏季招生季现已全面启动，欢迎对中华艺术有兴趣的朋友们前来咨询报名。
-                            </p>
-                            <button class="mt-4 text-red-600 hover:text-red-800 font-semibold transition duration-300 ease-in-out">阅读更多 &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- News/Event Item 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out flex flex-col sm:flex-row gap-4">
-                        <div class="sm:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/200x150/D4AF37/FFFFFF?text=活动+3" alt="新闻图片 3" class="rounded-md w-full h-auto sm:h-36 object-cover">
-                        </div>
-                        <div class="sm:w-2/3">
-                            <p class="text-gray-500 text-sm mb-2">2025年4月1日</p>
-                            <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">艺术团参演国际文化节</h3>
-                            <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                                黄河艺术团受邀参加本年度国际文化节，为观众带来了精彩的民族舞蹈表演，获得了热烈反响。
-                            </p>
-                            <button class="mt-4 text-red-600 hover:text-red-800 font-semibold transition duration-300 ease-in-out">阅读更多 &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- News/Event Item 4 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out flex flex-col sm:flex-row gap-4">
-                        <div class="sm:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/200x150/BC9E3F/FFFFFF?text=新闻+4" alt="新闻图片 4" class="rounded-md w-full h-auto sm:h-36 object-cover">
-                        </div>
-                        <div class="sm:w-2/3">
-                            <p class="text-gray-500 text-sm mb-2">2025年3月15日</p>
-                            <h3 class="text-xl md:text-2xl font-semibold text-yellow-800 mb-3">青年团招募新成员</h3>
-                            <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-                                为培养年轻一代艺术人才，黄河艺术团青年团现正面向青少年招募有潜力的艺术新星。
-                            </p>
-                            <button class="mt-4 text-red-600 hover:text-red-800 font-semibold transition duration-300 ease-in-out">阅读更多 &rarr;</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                    <button class="bg-red-600 hover:bg-red-700 text-white text-lg md:text-xl font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                        查看更多新闻与活动
-                    </button>
-                </div>
-            </section>
-
-            <!-- Gallery Section -->
-            <section id="gallery" class="mb-16 md:mb-24 bg-white p-8 md:p-12 card">
+ 
+            <!-- Gallery Section
+            <section id="gallery" class="mb-8 md:mb-12 bg-white p-8 md:p-12 card">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-700 mb-8 md:mb-10">精彩画廊</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                     <img src="https://placehold.co/500x400/F0B90B/FFFFFF?text=演出照片+1" alt="演出照片 1" class="rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out cursor-pointer object-cover aspect-square">
@@ -285,36 +229,14 @@
                     <img src="https://placehold.co/500x400/A49247/FFFFFF?text=演出照片+7" alt="演出照片 7" class="rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out cursor-pointer object-cover aspect-square">
                     <img src="https://placehold.co/500x400/988C4B/FFFFFF?text=演出照片+8" alt="演出照片 8" class="rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out cursor-pointer object-cover aspect-square">
                 </div>
-            </section>
+            </section> -->
 
             <!-- Contact Section -->
             <section id="contact" class="p-8 md:p-12 card bg-red-50">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-red-700 mb-8 md:mb-10">联系我们</h2>
                 <div class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-16">
                     <!-- Contact Details & Map -->
-                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start">
-                        <div class="text-center md:text-left mb-8 w-full">
-                            <p class="text-lg md:text-xl font-semibold text-gray-800 mb-2"><i class="fas fa-envelope text-yellow-700 mr-2"></i> 电子邮件:</p>
-                            <p class="text-base md:text-lg text-gray-700">info@yellowriverart.org</p>
-                            <p class="text-lg md:text-xl font-semibold text-gray-800 mt-4 mb-2"><i class="fas fa-phone-alt text-yellow-700 mr-2"></i> 电话:</p>
-                            <p class="text-base md:text-lg text-gray-700">+1 (123) 456-7890</p>
-                            <p class="text-lg md:text-xl font-semibold text-gray-800 mt-4 mb-2"><i class="fas fa-map-marker-alt text-yellow-700 mr-2"></i> 地址:</p>
-                            <p class="text-base md:text-lg text-gray-700">123 文化街, 艺术城, CA 90210, 美国</p>
-                        </div>
-                        <!-- Map Placeholder -->
-                        <div class="w-full h-64 md:h-80 bg-gray-200 rounded-lg shadow-md overflow-hidden">
-                            <!-- Replace with actual Google Maps embed iframe -->
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2016335128035!2d-122.41941578468128!3d37.77492977975981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858087e5555555%3A0x7d288d6c0a0c0a0a!2sSan+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1678912345678!5m2!1sen!2sus"
-                                width="100%"
-                                height="100%"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
+        
                     <!-- Contact Form -->
                     <div class="w-full md:w-1/2">
                         <form class="bg-white p-6 rounded-lg shadow-md">
@@ -342,63 +264,70 @@
                     </div>
                 </div>
             </section>
-        </main>
 
-        <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 text-center text-sm md:text-base mt-auto">
-            <div class="container mx-auto">
-                <p>&copy; 2025 黄河艺术团. 版权所有.</p>
-                <p class="mt-2">联系我们: info@yellowriverart.org | 电话: +1 (123) 456-7890</p>
-                <div class="flex justify-center space-x-6 mt-4 text-2xl">
-                    <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-wechat"></i></a>
+            <!-- Footer -->
+            <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 text-center text-sm md:text-base mt-auto">
+                <div class="container mx-auto">
+                    <p>&copy; 2025 黄河艺术团. 版权所有.</p>
+                    <p class="mt-2">联系我们: yraedc@gmail.com </p>
+                    <!-- <div class="flex justify-center space-x-6 mt-4 text-2xl">
+                        <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-400 transition duration-300 ease-in-out"><i class="fab fa-wechat"></i></a>
+                    </div> -->
                 </div>
+            </footer>
+
+            <!-- Fixed Vertical Navigation (md+ screens) -->
+            <div class="fixed top-20 left-0 z-40 h-auto w-36 rounded-r-xl flex flex-col items-start py-4 px-1 space-y-0 border-r border-yellow-100 bg-white/80 backdrop-blur-md shadow-none transition-all hidden md:flex">
+                <a href="organization.html" class="w-full text-left py-2 px-2 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">组织结构</a>
+                <hr class="w-full border-yellow-100 my-0">
+                <a href="bylaws.html" class="w-full text-left py-2 px-2 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">团章 By Laws</a>
+                <hr class="w-full border-yellow-100 my-0">
+                <a href="团员天地-membership.html" class="w-full text-left py-2 px-2 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">团员天地</a>
+                <hr class="w-full border-yellow-100 my-0">
+                <a href="专题讲座-vocal-lessons.html" class="w-full text-left py-2 px-2 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">专题讲座（Vocal Lessons）</a>
+                <hr class="w-full border-yellow-100 my-0">
+                <!-- <a href="地区网站.html" class="w-full text-left py-2 px-2 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">地区网站</a>
+                <hr class="w-full border-yellow-100 my-0">
+                <a href="团员回顾.html" class="w-full text-left py-2 px-2 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">回顾演出</a> -->
             </div>
-        </footer>
 
-        <!-- Fixed Vertical Navigation (md+ screens) -->
-        <div class="fixed top-24 left-0 z-40 h-auto w-40 rounded-r-xl flex flex-col items-start py-6 px-2 space-y-0 border-r border-yellow-100 bg-white/70 backdrop-blur-md shadow-none transition-all hidden md:flex">
-            <a href="organization.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">组织结构</a>
-            <hr class="w-full border-yellow-100 my-0">
-            <a href="bylaws.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">团章 By Laws</a>
-            <hr class="w-full border-yellow-100 my-0">
-            <a href="copy-of-专题讲座-vocal-lessons.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">专题讲座</a>
-            <hr class="w-full border-yellow-100 my-0">
-            <a href="copy-of-团员天地-membership.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">团员天地</a>
-            <hr class="w-full border-yellow-100 my-0">
-            <a href="黄河爱乐乐团.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">黄河爱乐乐团</a>
-            <hr class="w-full border-yellow-100 my-0">
-            <a href="copy-of-地区网站.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">地区网站</a>
-            <hr class="w-full border-yellow-100 my-0">
-            <a href="copy-of-团员回顾.html" class="w-full text-left py-2 px-3 rounded-md hover:bg-yellow-50 text-yellow-800 font-semibold transition text-sm">回顾演出</a>
-        </div>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        <script>
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            if(menuBtn && mainNav) {
+                menuBtn.addEventListener('click', function() {
+                    mainNav.classList.toggle('hidden');
+                });
+            }
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if(this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        if(window.innerWidth < 768) mainNav.classList.add('hidden');
+                    }
                 });
             });
-        });
-
-        // Sticky header background change on scroll
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // When scrolled down 50px
-                header.classList.remove('header-transparent');
-                header.classList.add('bg-gradient-to-r', 'from-yellow-600', 'to-red-700');
-                header.classList.add('shadow-lg'); // Add shadow when solid
-            } else {
-                header.classList.add('header-transparent');
-                header.classList.remove('bg-gradient-to-r', 'from-yellow-600', 'to-red-700');
-                header.classList.remove('shadow-lg'); // Remove shadow when transparent
-            }
-        });
-    </script>
-</body>
-</html>
+            // Sticky header background change on scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.remove('header-transparent');
+                    header.classList.add('bg-gradient-to-r', 'from-yellow-600', 'to-red-700');
+                    header.classList.add('shadow-lg');
+                } else {
+                    header.classList.add('header-transparent');
+                    header.classList.remove('bg-gradient-to-r', 'from-yellow-600', 'to-red-700');
+                    header.classList.remove('shadow-lg');
+                }
+            });
+        </script>
+    </body>
+    </html>
