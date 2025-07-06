@@ -64,8 +64,43 @@
                 <li style="margin-bottom: 0.7em;"><a href="https://drive.google.com/drive/folders/10C28vR674irKNymADFmUSP8JLA-lQ_tQ" target="_blank" style="color:#1a73e8; text-decoration:underline; font-weight: 500;">男低声部</a></li>
                 <li style="margin-bottom: 0.7em;"><a href="https://drive.google.com/drive/folders/10M-Bpvt3GFk29KZHd5N-p-EqQn7dqcoD" target="_blank" style="color:#1a73e8; text-decoration:underline; font-weight: 500;">男高声部</a></li>
             </ul>
+            
         </section>
-        
+        <section style="margin-top:2.5rem;">
+            <h2 style="color:#b8860b; text-align:center;">作业提交</h2>
+            <form id="homework-form" style="max-width: 420px; margin: 2em auto; background: #f9f9f9; border-radius: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 2em;" enctype="multipart/form-data" method="POST" action="#">
+                <div style="margin-bottom: 1.2em;">
+                    <label for="name" style="display:block; margin-bottom:0.5em; color:#333; font-weight:500;">姓名</label>
+                    <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; border:1px solid #ccc; border-radius:0.5em;">
+                </div>
+                <div style="margin-bottom: 1.2em;">
+                    <label for="song" style="display:block; margin-bottom:0.5em; color:#333; font-weight:500;">曲目</label>
+                    <input type="text" id="song" name="song" required style="width:100%; padding:0.5em; border:1px solid #ccc; border-radius:0.5em;">
+                </div>
+                <div style="margin-bottom: 1.2em;">
+                    <label for="section" style="display:block; margin-bottom:0.5em; color:#333; font-weight:500;">声部</label>
+                    <select id="section" name="section" required style="width:100%; padding:0.5em; border:1px solid #ccc; border-radius:0.5em;">
+                        <option value="">请选择</option>
+                        <option value="女中声部">女中声部</option>
+                        <option value="女高声部">女高声部</option>
+                        <option value="男低声部">男低声部</option>
+                        <option value="男高声部">男高声部</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 1.2em;">
+                    <label for="file" style="display:block; margin-bottom:0.5em; color:#333; font-weight:500;">上传文件</label>
+                    <input type="file" id="file" name="file" required style="width:100%;">
+                </div>
+                <button type="submit" style="background:#b8860b; color:#fff; font-weight:600; border:none; border-radius:0.5em; padding:0.7em 2em; cursor:pointer;">提交作业</button>
+                <div id="form-msg" style="margin-top:1em; color:#b00; font-weight:500;"></div>
+            </form>
+            <script>
+            document.getElementById('homework-form').onsubmit = function(e) {
+                e.preventDefault();
+                document.getElementById('form-msg').innerText = '作业上传功能需要后台支持（如 Google Apps Script、Node.js 或 Python Flask）。请联系管理员。';
+            };
+            </script>
+        </section>
     </div>
 </body>
 </html>
