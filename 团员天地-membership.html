@@ -95,9 +95,33 @@
                 <div id="form-msg" style="margin-top:1em; color:#b00; font-weight:500;"></div>
             </form>
             <script>
-            document.getElementById('homework-form').onsubmit = function(e) {
+            document.getElementById('homework-form').onsubmit = async function(e) {
                 e.preventDefault();
-                document.getElementById('form-msg').innerText = '作业上传功能需要后台支持（如 Google Apps Script、Node.js 或 Python Flask）。请联系管理员。';
+                const form = document.getElementById('homework-form');
+                const msg = document.getElementById('form-msg');
+                msg.style.color = '#888';
+                msg.innerText = '正在上传，请稍候...';
+
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch('https://script.google.com/macros/s/AKfycbxJVRHD943ZxHqTVtfELCLsFT_nnO-z4hW-wUS1f7uDebRGIEZrbV3wrp8GFAj6rTJZ/exec', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        msg.style.color = '#2e7d32';
+                        msg.innerText = '提交成功！感谢您的作业。';
+                        form.reset();
+                    } else {
+                        msg.style.color = '#b00';
+                        msg.innerText = '提交失败：' + (result.error || '请重试或联系管理员。');
+                    }
+                } catch (err) {
+                    msg.style.color = '#b00';
+                    msg.innerText = '网络错误或服务器无响应，请稍后重试。';
+                }
             };
             </script>
         </section>
