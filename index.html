@@ -63,10 +63,10 @@
         </section>
 
         <!-- Main Content Wrapper (adjust padding-top to account for fixed header) -->
-        <main class="flex-grow container mx-auto px-2 sm:px-4 py-6 md:py-12 mt-8"> <!-- Reduced mt-20 to mt-8 for less gap -->
+        <main class="flex-grow container mx-auto px-2 sm:px-4 py-4 md:py-6 mt-4"> <!-- Reduced vertical spacing -->
 
             <!-- About Us Section -->
-            <section id="about" class="mb-8 md:mb-12 bg-white p-8 md:p-12 card flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <section id="about" class="mb-4 md:mb-6 bg-white p-4 md:p-6 card flex flex-col md:flex-row items-center gap-6 md:gap-8">
                 <div class="md:w-1/2 flex justify-center">
                     <div id="about-carousel" class="relative w-full max-w-lg">
                         <!-- Carousel Images -->
@@ -138,43 +138,6 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    // Simple Carousel Logic
-                    (function() {
-                        const carousel = document.getElementById('about-carousel');
-                        const images = carousel.querySelectorAll('.carousel-img');
-                        const indicators = carousel.querySelectorAll('.carousel-indicator');
-                        let current = 0;
-                        function showSlide(idx) {
-                            images.forEach((img, i) => {
-                                img.style.opacity = (i === idx) ? '1' : '0';
-                                img.style.zIndex = (i === idx) ? '1' : '0';
-                            });
-                            indicators.forEach((dot, i) => {
-                                dot.classList.toggle('bg-yellow-400', i === idx);
-                                dot.classList.toggle('bg-yellow-200', i !== idx);
-                                dot.style.opacity = (i === idx) ? '0.8' : '0.5';
-                            });
-                            current = idx;
-                        }
-                        carousel.querySelector('.carousel-prev').onclick = () => {
-                            showSlide((current - 1 + images.length) % images.length);
-                        };
-                        carousel.querySelector('.carousel-next').onclick = () => {
-                            showSlide((current + 1) % images.length);
-                        };
-                        indicators.forEach(dot => {
-                            dot.onclick = () => showSlide(Number(dot.dataset.index));
-                        });
-                        // Optional: auto-play
-                        let timer = setInterval(() => {
-                            showSlide((current + 1) % images.length);
-                        }, 4000);
-                        carousel.onmouseenter = () => clearInterval(timer);
-                        carousel.onmouseleave = () => timer = setInterval(() => showSlide((current + 1) % images.length), 4000);
-                        showSlide(0);
-                    })();
-                </script>
                 <div class="md:w-1/2 text-center md:text-left">
                     <h2 class="text-3xl md:text-4xl font-bold text-yellow-700 mb-6 md:mb-8">关于我们</h2>
                     <p class="text-base md:text-lg leading-relaxed text-gray-700 mb-4">
@@ -184,7 +147,7 @@
             </section>
 
             <!-- 30周年征文 Section -->
-            <section id="essay-30th" class="mb-8 md:mb-12 p-8 md:p-12 card bg-yellow-50 rounded-xl shadow-lg scroll-mt-28">
+            <section id="essay-30th" class="mb-4 md:mb-6 p-4 md:p-6 card bg-yellow-50 rounded-xl shadow-lg scroll-mt-20">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-700 mb-8 md:mb-10">建团30周年征文</h2>
                 <div class="flex flex-col md:flex-row items-start gap-8 md:gap-12">
                     <!-- Left column: image and paragraph + first 6 essays -->
@@ -228,7 +191,7 @@
             </section>
  
             <!-- Gallery Section
-            <section id="gallery" class="mb-8 md:mb-12 bg-white p-8 md:p-12 card">
+            <section id="gallery" class="mb-4 md:mb-6 bg-white p-4 md:p-6 card">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-700 mb-8 md:mb-10">精彩画廊</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                     <img src="https://placehold.co/500x400/F0B90B/FFFFFF?text=演出照片+1" alt="演出照片 1" class="rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out cursor-pointer object-cover aspect-square">
@@ -243,7 +206,7 @@
             </section> -->
 
             <!-- 信息更新 Section -->
-            <section id="info-update" class="mb-8 md:mb-12 p-8 md:p-12 card bg-blue-50 rounded-xl shadow-lg">
+            <section id="info-update" class="mb-4 md:mb-6 p-4 md:p-6 card bg-blue-50 rounded-xl shadow-lg">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-8 md:mb-10">信息更新</h2>
                 <div class="text-gray-800 text-base md:text-lg leading-relaxed mb-6 text-center">
                     欢迎关注黄河艺术团最新动态和通知。请及时查看本栏目获取最新活动、演出、团员信息等更新。
@@ -251,7 +214,7 @@
                 <div id="news-slideshow" class="relative max-w-2xl mx-auto">
                     <!-- Slides -->
                     <div class="news-slide block" style="opacity:1; transition:opacity 0.5s;">
-                        <img src="./news.png" alt="最新动态" class="rounded-lg shadow-md w-full max-w-2xl mb-4 mx-auto">
+                        <img src="./news.png" alt="最新动态" class="rounded-lg shadow-md w-full max-w-4xl mb-4 mx-auto" style="height: auto; min-height: 320px;">
                     </div>
                     <!-- Controls -->
                     <div class="flex justify-center space-x-3 mt-4">
